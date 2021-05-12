@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Super Code the .net learn site</p>
+    <p>Build from .net 5</p>
+</div>
+
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">全部</a>
+    </li>
+    @foreach (var item in Model.Categories)
+    {
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/?categoryId=@item.Id">@item.Name</a>
+        </li>
+
+    }
+</ul> 
+
+<ul class="list-group">
+    @foreach (var item in Model.Articles)
+    {
+        <li class="list-group-item" style="border:none;padding:0;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a href="/Contents/ArticlePage?articleId=@item.Id" class="btn btn-primary">Read more</a>
+                </div>
+                <div class="card-footer">
+                    <span>@item.Like</span>
+                    <span>@item.Favorite</span>
+                </div>
+            </div>
+        </li>
+
+    }
+</ul>

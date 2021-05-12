@@ -1,0 +1,87 @@
+﻿@page
+@model Oryx.SuperCode.Pages.Contents.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Article.Id" />
+            <div class="form-group">
+                <label asp-for="Article.CategoryId" class="control-label"></label>
+                <select asp-for="Article.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="Article.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Title" class="control-label"></label>
+                <input asp-for="Article.Title" class="form-control" />
+                <span asp-validation-for="Article.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Description" class="control-label"></label>
+                <input asp-for="Article.Description" class="form-control" />
+                <span asp-validation-for="Article.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Content" class="control-label"></label>
+                <input asp-for="Article.Content" class="form-control" />
+                <span asp-validation-for="Article.Content" class="text-danger"></span>
+                <div id="textEditor">
+                    @Model.Article.Content
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Author" class="control-label"></label>
+                <input asp-for="Article.Author" class="form-control" />
+                <span asp-validation-for="Article.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.CreateTime" class="control-label"></label>
+                <input asp-for="Article.CreateTime" class="form-control" />
+                <span asp-validation-for="Article.CreateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Like" class="control-label"></label>
+                <input asp-for="Article.Like" class="form-control" />
+                <span asp-validation-for="Article.Like" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Favorite" class="control-label"></label>
+                <input asp-for="Article.Favorite" class="form-control" />
+                <span asp-validation-for="Article.Favorite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <!-- 引入 wangEditor.min.js -->
+    <script type="text/javascript">
+        const E = window.wangEditor
+        const editor = new E('#textEditor')
+        // 或者 const editor = new E( document.getElementById('div1') )
+
+        // 配置 onchange 回调函数
+        editor.config.onchange = function (newHtml) {
+            textEditor.value = newHtml
+        }
+        // 配置触发 onchange 的时间频率，默认为 200ms
+        editor.config.onchangeTimeout = 1000 // 修改为 500ms
+        editor.create()
+    </script>
+}

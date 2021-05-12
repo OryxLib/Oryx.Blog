@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oryx.SuperCode", "Oryx.SuperCode\Oryx.SuperCode.csproj", "{87139A89-F0F0-4706-87EA-BBBC902078BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87139A89-F0F0-4706-87EA-BBBC902078BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87139A89-F0F0-4706-87EA-BBBC902078BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87139A89-F0F0-4706-87EA-BBBC902078BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87139A89-F0F0-4706-87EA-BBBC902078BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21A88822-8C0C-4A22-A8AF-0EFC58857AC7}
+	EndGlobalSection
+EndGlobal

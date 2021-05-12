@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <ul class="dropdown-menu  " style="display:block;">
+            <li><span class="dropdown-item-text">Content</span></li>
+            @if (User.IsInRole("admin"))
+            {
+                <li><a class="dropdown-item" href="/Admin/Categories/Index">Category</a></li>
+
+            }
+            <li><a class="dropdown-item" href="/Admin/Articles/Index">Article</a></li>
+        </ul>
+    </div>
+    <div class="col-md-8"></div>
+</div>
